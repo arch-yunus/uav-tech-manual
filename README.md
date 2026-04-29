@@ -1,77 +1,108 @@
 ![UAV Technical Manual](assets/tech_manual_banner.png)
 
-# 🦅 UAV Technical Manual: ARGUS Systems Reference `v3.0-Combat`
+# 🦅 UAV Teknik Kılavuz: ARGUS Sistem Referansı `v3.0-Combat`
 
-[![Hardware Standard](https://img.shields.io/badge/Standard-MIL--STD--810G-orange?style=for-the-badge&logo=bosch)](https://github.com/arch-yunus/uav-tech-manual)
-[![Documentation](https://img.shields.io/badge/Status-Fully--Documented-success?style=for-the-badge&logo=readme)](https://github.com/arch-yunus/uav-tech-manual)
-[![Maintenance](https://img.shields.io/badge/Cycle-25h--Service-yellow?style=for-the-badge&logo=ifixit)](https://github.com/arch-yunus/uav-tech-manual)
+[![Donanım Standartı](https://img.shields.io/badge/Standart-MIL--STD--810G-orange?style=for-the-badge&logo=bosch)](https://github.com/arch-yunus/uav-tech-manual)
+[![Dökümantasyon](https://img.shields.io/badge/Durum-Tam--Dökümante-success?style=for-the-badge&logo=readme)](https://github.com/arch-yunus/uav-tech-manual)
+[![Bakım](https://img.shields.io/badge/Periyot-25s--Servis-yellow?style=for-the-badge&logo=ifixit)](https://github.com/arch-yunus/uav-tech-manual)
 
 > **"Göklerin derinliğinde, teknoloji ve ruhun muazzam raksı."**
 
-Welcome to the **ARGUS Technical Repository**—the definitive source for hardware specifications, maintenance protocols, and tactical operational standards for the ARGUS UAV ecosystem. This is more than a manual; it is the strategic foundation of aerial dominance.
+**ARGUS Teknik Deposu**'na hoş geldiniz—ARGUS İHA ekosistemi için donanım spesifikasyonları, bakım protokolleri ve taktik operasyonel standartların kesin kaynağı. Bu sadece bir kılavuz değil; gökyüzündeki hakimiyetin stratejik temelidir.
 
 ---
 
-## 🛰️ Strategic Vision & LCHI Philosophy
+## 🛰️ Stratejik Vizyon ve LCHI Felsefesi
 
-The **ARGUS Platform** is engineered under the **Low-Cost High-Impact (LCHI)** doctrine. We prioritize modular resilience, ensuring that even in the most contested Electronic Warfare (EW) environments, the system maintains its operational integrity through technical discipline and spiritual focus (*Siber-Asabiyet*).
+**ARGUS Platformu**, **Düşük-Maliyet Yüksek-Etki (LCHI)** doktrini altında mühendislik edilmiştir. Modüler dayanıklılığa öncelik veriyoruz; en yoğun Elektronik Harp (EH) ortamlarında bile sistemin operasyonel bütünlüğünü teknik disiplin ve ruhsal odaklanma (*Siber-Asabiyet*) ile korumasını sağlıyoruz.
 
-### 📜 Operational Core Modules
+### 📜 Operasyonel Ana Modüller
 
-| Module | Technical Focus | Operational Status |
+| Modül | Teknik Odak | Operasyonel Durum |
 | :--- | :--- | :--- |
-| 🛠️ [Hardware Specs](docs/hardware_specs.md) | Propulsion, Avionics & Frame Integrity | 🟢 Operational |
-| ✈️ [Flight Ops](docs/flight_ops.md) | Pre-flight, In-flight & Post-flight SOPs | 🟢 Operational |
-| 📋 [Mission Profiles](docs/mission_profiles.md) | ISR, EW Deception & Logistics Tasks | 🟢 Operational |
-| 🔧 [Maintenance](docs/maintenance.md) | Periodic Service & Field Repair Guide | 🟢 Operational |
-| 📡 [Tactical EW](docs/tactical_ew.md) | Anti-Jamming & Resilient Navigation | 🟢 Operational |
-| ⚔️ [Philosophy](docs/philosophy.md) | The Spirit of the Machine & Discipline | 🟢 Operational |
+| 🛠️ [Donanım Özellikleri](docs/hardware_specs.md) | İtki, Aviyonik ve Gövde Bütünlüğü | 🟢 Operasyonel |
+| ✈️ [Uçuş Operasyonları](docs/flight_ops.md) | Uçuş Öncesi, Esnası ve Sonrası SOP'lar | 🟢 Operasyonel |
+| 📋 [Görev Profilleri](docs/mission_profiles.md) | ISR, EH Aldatmacası ve Lojistik Görevler | 🟢 Operasyonel |
+| 🔧 [Bakım ve Onarım](docs/maintenance.md) | Periyodik Servis ve Saha Onarım Rehberi | 🟢 Operasyonel |
+| 📡 [Taktik EH](docs/tactical_ew.md) | Karıştırma Önleme ve Dayanıklı Navigasyon | 🟢 Operasyonel |
+| ⚔️ [Felsefe](docs/philosophy.md) | Makinenin Ruhu ve Disiplin | 🟢 Operasyonel |
 
 ---
 
-## 🛠️ System Overview (Logical Topology)
+## 🛠️ Sistem Özeti (Mantıksal Topoloji)
 
 ```mermaid
 graph TD
-    A[ARGUS Tactical Core] --> B[Avionics Suite]
-    A --> C[Propulsion Module]
-    A --> D[EW Resilience Shield]
+    A[ARGUS Taktik Çekirdek] --> B[Aviyonik Paketi]
+    A --> C[İtki Modülü]
+    A --> D[EH Dayanıklılık Kalkanı]
     
-    B --> B1[GNSS-Resilient IMU Cluster]
-    B --> B2[AI Vision Edge Engine]
+    B --> B1[EH-Dayanıklı IMU Kümesi]
+    B --> B2[AI Görü Edge Motoru]
     
-    C --> C1[High-Efficiency BLDC Drive]
-    C --> C2[Smart Battery Mgmt System]
+    C --> C1[Yüksek Verimli BLDC Sürücü]
+    C --> C2[Akıllı Batarya Yönetim Sistemi]
     
-    D --> D1[Signal Deception Unit (SDU)]
-    D --> D2[Hopping Frequency Link]
+    D --> D1[Sinyal Aldatma Birimi (SDU)]
+    D --> D2[Frekans Atlamalı Link]
 ```
 
 ---
 
-## 📂 Repository Architecture
+## 🧰 Atölye ve Teknik Altyapı Standartları
+
+Güvenilir bir operasyon, düzenli bir montaj masasında başlar. ARGUS sistemlerinin bakımı için asgari atölye standartları:
+
+*   **Anti-Statik (ESD) Koruma**: Tüm elektronik müdahaleler ESD mat ve bileklik eşliğinde yapılmalıdır.
+*   **Hassas Lehimleme**: Havya sıcaklığı kurşunsuz lehimler için 350-380°C aralığında sabitlenmeli, sinyal yollarında ince uçlar tercih edilmelidir.
+*   **Diagnostik Araçlar**: Kısa devre kontrolü için *Smoke Stopper* ve yüksek hassasiyetli multimetre kullanımı zorunludur.
+
+---
+
+## 🩺 Arıza Teşhis ve Triyaj (Triage)
+
+Kırım veya arıza sonrası sahada izlenecek kritik adımlar:
+
+1.  **Görsel Denetim**: Karbon fiber şasideki mikro çatlaklar ve motor çanlarındaki sürtünme fiziksel olarak kontrol edilir.
+2.  **Güç İzolasyon Testi**: Batarya bağlanmadan önce PDB (Güç Dağıtım Kartı) üzerinde multimetre ile kısa devre testi yapılır.
+3.  **Hata Kayıt Analizi (Blackbox)**: Uçuş kontrolcüsündeki Blackbox logları, kaza anındaki gyro ve motor çıkış değerleri için analiz edilir.
+
+---
+
+## 🔋 Batarya ve Enerji Yönetimi
+
+İHA'nın kalbi bataryasıdır. ARGUS enerji protokolleri:
+
+*   **İç Direnç (IR) Takibi**: Hücreler arası iç direnç farkı %10'u aşan bataryalar uçuş hattından çekilmelidir.
+*   **Depolama (Storage)**: 24 saatten uzun süre kullanılmayacak bataryalar hücre başı 3.80V-3.85V seviyesine getirilmelidir.
+*   **Yangın Güvenliği**: Bataryalar her zaman yanmaz (LiPo-Safe) çantalarda veya kum havuzlu bölmelerde muhafaza edilmelidir.
+
+---
+
+## 📂 Depo Mimarisi
 
 ```bash
 uav-tech-manual/
-├── docs/               # Technical Specifications & Protocols
+├── docs/               # Teknik Spesifikasyonlar ve Protokoller
 │   ├── hardware_specs.md
 │   ├── flight_ops.md
 │   ├── maintenance.md
+│   ├── mission_profiles.md
 │   ├── tactical_ew.md
 │   └── philosophy.md
-├── assets/             # Schematics & Technical Visuals
-└── README.md           # The Sovereign Gateway
+├── assets/             # Şemalar ve Teknik Görseller
+└── README.md           # Ana Giriş Kapısı
 ```
 
 ---
 
-## 🚀 Rapid Operational Deployment
+## 🚀 Hızlı Operasyonel Dağıtım
 
-1.  **Power Check**: Verify cell balance (min 3.7V per cell).
-2.  **IMU Calibration**: Ensure zero-offset on the primary IMU cluster.
-3.  **EW Shielding**: Activate OMEGA-tier deception modules via **ARGUS Mission Control**.
-4.  **Sync**: Link with the Tactical HUD for real-time telemetry verification.
+1.  **Güç Kontrolü**: Hücre dengesini doğrulayın (hücre başı min 3.7V).
+2.  **IMU Kalibrasyonu**: Birincil IMU kümesinde sıfır sapma olduğundan emin olun.
+3.  **EH Kalkanı**: OMEGA-tier aldatma modüllerini **ARGUS Mission Control** üzerinden aktif edin.
+4.  **Senkronizasyon**: Gerçek zamanlı telemetri doğrulaması için Taktik HUD ile bağlantı kurun.
 
 ---
 
-**Developed with ⚔️ by arch-yunus.**
+**arch-yunus tarafından ⚔️ ile geliştirilmiştir.**
