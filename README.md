@@ -34,51 +34,71 @@ Sistemin her katmanı, teknik disiplin ve ruhsal odaklanmanın bir birleşimidir
 
 ## 🛠️ Sistem Özeti (Mantıksal Topoloji)
 
+Sistemin donanım mimarisi, hata toleransı yüksek ve modüler bir yapı üzerine kuruludur. Her birim, bağımsız bir "Fail-Safe" mekanizmasına sahiptir.
+
 ```mermaid
 graph TD
     A[ARGUS Taktik Çekirdek] --> B[Aviyonik Paketi]
     A --> C[İtki Modülü]
     A --> D[EH Dayanıklılık Kalkanı]
     
+    subgraph "Senses & Brain"
     B --> B1[EH-Dayanıklı IMU Kümesi]
     B --> B2[AI Görü Edge Motoru]
+    B --> B3[Magnetometre & Baro Shield]
+    end
     
+    subgraph "Power & Motion"
     C --> C1[Yüksek Verimli BLDC Sürücü]
     C --> C2[Akıllı Batarya Yönetim Sistemi]
+    C --> C3[Aktüatör Yedekleme Sistemi]
+    end
     
+    subgraph "Shield & Link"
     D --> D1[Sinyal Aldatma Birimi (SDU)]
     D --> D2[Frekans Atlamalı Link]
+    D --> D3[Encryption Layer AES-256]
+    end
 ```
 
 ---
 
-## 📐 Kritik Sistem Parametreleri
+## 📐 Kritik Sistem Parametreleri ve Toleranslar
 
-Maksimum performans için aşağıdaki sınır değerlere uyulması mecburidir:
+Maksimum operasyonel verimlilik için aşağıdaki nominal ve limit değerler esas alınmalıdır. Bu değerlerin dışındaki operasyonlar sistem bütünlüğünü tehlikeye atar.
 
-| Parametre | Nominal Değer | Limit Değer | Birim |
-| :--- | :--- | :--- | :--- |
-| **Maksimum İrtifa** | 500 | 2500 | Metre (AGL) |
-| **Seyir Hızı** | 15 | 28 | m/s |
-| **Operasyonel Menzil** | 5 | 12 | Kilometre |
-| **Rüzgar Dayanımı** | 20 | 35 | km/saat |
-| **Sistem Voltajı** | 22.2 | 25.2 | Volt (6S) |
+### Performans Matrisi
+- **Maksimum İrtifa:** 500m (Nominal) / 2500m (Limit AGL)
+- **Seyir Hızı:** 15 m/s (Nominal) / 28 m/s (Limit Dash)
+- **Operasyonel Menzil:** 5km (Nominal) / 12km (Limit C2 Link)
+- **Rüzgar Dayanımı:** 20 km/s (Nominal) / 35 km/s (Limit Gust)
+
+### Güç ve Enerji
+- **Sistem Voltajı:** 22.2V (Nominal 6S) / 25.2V (Max Charge)
+- **Kritik Voltaj:** 3.4V (Hücre başı acil iniş eşiği)
 
 ---
 
-## ⚠️ Güvenlik ve Acil Durum Protokolleri
+## 🔧 Bakım Periyotları ve Servis Protokolü
 
-Hata payı olmayan ortamlarda, saniyeler hayat kurtarır.
+LCHI doktrini uyarınca, sistemin ömrünü uzatmak için periyodik bakım zorunludur.
 
-### 1. Link Kaybı (Signal Loss)
-- Yer kontrol istasyonu ile bağlantı 3 saniyeden fazla kesilirse, sistem otomatik olarak **Failsafe-RTH** (Eve Dönüş) moduna geçer.
-- RTH irtifası, kalkış noktasından itibaren minimum **100 metre** olarak ayarlanmalıdır.
+| Periyot | Kontrol Noktası | Eylem |
+| :--- | :--- | :--- |
+| **Her Uçuş Öncesi** | Pervane & Motor | Çatlak ve gevşeklik kontrolü, elle tork testi. |
+| **10 Saat Uçuş** | Konektör & Kablo | XT60 ve sinyal kablolarında korozyon/ısınma izi. |
+| **25 Saat Uçuş** | Full Sistem Servis | Rulman yağlaması, gövde stres analizi, yazılım güncelleme. |
+| **50 Saat Uçuş** | Batarya Sağlığı | İç direnç (mΩ) ölçümü ve kapasite testi. |
 
-### 2. Kritik Voltaj Düşümü
-- Hücre başına gerilim **3.4V** altına düştüğünde, sistem en yakın güvenli iniş noktasına (Safe Landing) yönelir.
+---
 
-### 3. GPS Aldatmacası (Spoofing) Tespiti
-- GNSS verileri ile IMU verileri arasında tutarsızlık saptandığında, sistem **Vision-Only** (Sadece Görüntü) navigasyonuna geçer ve operatöre uyarı gönderir.
+## 🚨 Güvenlik ve Acil Durum (Failsafe) Refleksleri
+
+Sistem, insan hatasını veya dış saldırıları minimize etmek için şu otomatik reflekslere sahiptir:
+
+1.  **Bağlantı Kaybı (Link Loss)**: 3 saniye süreyle sinyal alınamazsa otonom RTH (Eve Dönüş) başlar.
+2.  **GPS Aldatmacası (Spoofing)**: GNSS verisi ile IMU verisi arasında >5m sapma saptandığında, sistem "Dead Reckoning" moduna geçer.
+3.  **EH Tehdit Algılama**: Spektrumda anormal gürültü artışı olduğunda, frekans atlama hızı (hop rate) otomatik olarak artırılır.
 
 ---
 
@@ -87,12 +107,12 @@ Hata payı olmayan ortamlarda, saniyeler hayat kurtarır.
 ```bash
 uav-tech-manual/
 ├── docs/               # Teknik Spesifikasyonlar ve Protokoller
-│   ├── hardware_specs.md
-│   ├── flight_ops.md
-│   ├── maintenance.md
-│   ├── mission_profiles.md
-│   ├── tactical_ew.md
-│   └── philosophy.md
+│   ├── hardware_specs.md   # Donanım bileşen detayları
+│   ├── flight_ops.md       # Uçuş operasyon standartları
+│   ├── maintenance.md      # Bakım ve onarım kılavuzu
+│   ├── mission_profiles.md # Görev odaklı senaryolar
+│   ├── tactical_ew.md      # Elektronik Harp stratejileri
+│   └── philosophy.md       # Siber-Asabiyet doktrini
 ├── assets/             # Şemalar ve Teknik Görseller
 └── README.md           # Ana Giriş Kapısı
 ```
@@ -105,12 +125,6 @@ uav-tech-manual/
 2.  **IMU Kalibrasyonu**: Birincil IMU kümesinde sıfır sapma olduğundan emin olun.
 3.  **EH Kalkanı**: OMEGA-tier aldatma modüllerini **ARGUS Mission Control** üzerinden aktif edin.
 4.  **Senkronizasyon**: Gerçek zamanlı telemetri doğrulaması için Taktik HUD ile bağlantı kurun.
-
----
-
-## 🤝 Katkıda Bulunma
-
-Bu kılavuz, kolektif zekanın bir ürünüdür. Teknik güncellemeler veya yeni operasyonel prosedürler için `feature/` branch'leri üzerinden PR (Pull Request) gönderebilirsiniz.
 
 ---
 
