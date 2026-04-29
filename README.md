@@ -128,4 +128,14 @@ uav-tech-manual/
 
 ---
 
+---
+
+## 🌌 Gelecek Vizyonu: Omni-Domain Egemenliği
+
+SUNGUR ekosistemi, sadece gökyüzüyle sınırlı kalmayacak. **SUNGUR-OMNI** projesi ile denizlerin derinliğinden uzayın sessizliğine kadar her ortamda var olabilen, karada otonom hareket kabiliyetine sahip "Omni-Domain" platformlar üzerine çalışıyoruz.
+
+> *"Sınırları teknoloji belirlemez, irade belirler."*
+
+---
+
 **arch-yunus tarafından ⚔️ ile geliştirilmiştir.**
