@@ -16,8 +16,9 @@ ARGUS sistemleri, **LCHI (Low-Cost High-Impact)** felsefesi ile geliştirilmişt
 | :--- | :--- | :--- |
 | 🛠️ [Donanım Spesifikasyonları](docs/hardware_specs.md) | Gövde, itki sistemleri ve aviyonik detaylar. | 🟢 Hazır |
 | ✈️ [Uçuş Operasyonları](docs/flight_ops.md) | Uçuş öncesi, esnası ve sonrası protokoller. | 🟢 Hazır |
+| 📋 [Görev Profilleri](docs/mission_profiles.md) | ISR, EH ve lojistik görev senaryoları. | 🟢 Hazır |
 | 🔧 [Bakım ve Lojistik](docs/maintenance.md) | Periyodik bakım tabloları ve saha onarım rehberi. | 🟢 Hazır |
-| 📡 [Taktik Elektronik Harp](docs/tactical_ew.md) | Karıştırma önleme ve EH dirençli navigasyon. | 🟡 Güncelleniyor |
+| 📡 [Taktik Elektronik Harp](docs/tactical_ew.md) | Karıştırma önleme ve EH dirençli navigasyon. | 🟢 Hazır |
 | ⚔️ [Alperen Teknoloji Felsefesi](docs/philosophy.md) | Teknolojinin ruhu ve operasyonel disiplin. | 🟢 Hazır |
 
 ---
