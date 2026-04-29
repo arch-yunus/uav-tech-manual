@@ -1,65 +1,76 @@
-# 🦅 UAV Technical Manual: ARGUS Systems Reference
+![UAV Technical Manual](assets/tech_manual_banner.png)
+
+# 🦅 UAV Technical Manual: ARGUS Systems Reference `v3.0-Combat`
+
+[![Hardware Standard](https://img.shields.io/badge/Standard-MIL--STD--810G-orange?style=for-the-badge&logo=bosch)](https://github.com/arch-yunus/uav-tech-manual)
+[![Documentation](https://img.shields.io/badge/Status-Fully--Documented-success?style=for-the-badge&logo=readme)](https://github.com/arch-yunus/uav-tech-manual)
+[![Maintenance](https://img.shields.io/badge/Cycle-25h--Service-yellow?style=for-the-badge&logo=ifixit)](https://github.com/arch-yunus/uav-tech-manual)
 
 > **"Göklerin derinliğinde, teknoloji ve ruhun muazzam raksı."**
 
-Bu depo, **ARGUS İnsansız Hava Aracı (İHA)** sistemleri için kapsamlı teknik dökümantasyonu, operasyonel protokolleri ve bakım kılavuzlarını içermektedir. Bu döküman, sadece bir kullanım kılavuzu değil; gökyüzündeki hakimiyetin teknik ve stratejik manifestosudur.
+Welcome to the **ARGUS Technical Repository**—the definitive source for hardware specifications, maintenance protocols, and tactical operational standards for the ARGUS UAV ecosystem. This is more than a manual; it is the strategic foundation of aerial dominance.
 
 ---
 
-## 🛰️ Vizyon ve Stratejik Mimari
+## 🛰️ Strategic Vision & LCHI Philosophy
 
-ARGUS sistemleri, **LCHI (Low-Cost High-Impact)** felsefesi ile geliştirilmiştir. Minimum maliyetle maksimum operasyonel etkiyi hedefleyen bu yaklaşım, karmaşık elektronik harp ortamlarında dahi yüksek dayanıklılık ve otonomi sunar.
+The **ARGUS Platform** is engineered under the **Low-Cost High-Impact (LCHI)** doctrine. We prioritize modular resilience, ensuring that even in the most contested Electronic Warfare (EW) environments, the system maintains its operational integrity through technical discipline and spiritual focus (*Siber-Asabiyet*).
 
-### 📜 Ana Modüller ve Dökümantasyon
+### 📜 Operational Core Modules
 
-| Bölüm | İçerik | Durum |
+| Module | Technical Focus | Operational Status |
 | :--- | :--- | :--- |
-| 🛠️ [Donanım Spesifikasyonları](docs/hardware_specs.md) | Gövde, itki sistemleri ve aviyonik detaylar. | 🟢 Hazır |
-| ✈️ [Uçuş Operasyonları](docs/flight_ops.md) | Uçuş öncesi, esnası ve sonrası protokoller. | 🟢 Hazır |
-| 📋 [Görev Profilleri](docs/mission_profiles.md) | ISR, EH ve lojistik görev senaryoları. | 🟢 Hazır |
-| 🔧 [Bakım ve Lojistik](docs/maintenance.md) | Periyodik bakım tabloları ve saha onarım rehberi. | 🟢 Hazır |
-| 📡 [Taktik Elektronik Harp](docs/tactical_ew.md) | Karıştırma önleme ve EH dirençli navigasyon. | 🟢 Hazır |
-| ⚔️ [Alperen Teknoloji Felsefesi](docs/philosophy.md) | Teknolojinin ruhu ve operasyonel disiplin. | 🟢 Hazır |
+| 🛠️ [Hardware Specs](docs/hardware_specs.md) | Propulsion, Avionics & Frame Integrity | 🟢 Operational |
+| ✈️ [Flight Ops](docs/flight_ops.md) | Pre-flight, In-flight & Post-flight SOPs | 🟢 Operational |
+| 📋 [Mission Profiles](docs/mission_profiles.md) | ISR, EW Deception & Logistics Tasks | 🟢 Operational |
+| 🔧 [Maintenance](docs/maintenance.md) | Periodic Service & Field Repair Guide | 🟢 Operational |
+| 📡 [Tactical EW](docs/tactical_ew.md) | Anti-Jamming & Resilient Navigation | 🟢 Operational |
+| ⚔️ [Philosophy](docs/philosophy.md) | The Spirit of the Machine & Discipline | 🟢 Operational |
 
 ---
 
-## 🛠️ Sistem Özeti
+## 🛠️ System Overview (Logical Topology)
 
 ```mermaid
 graph TD
-    A[ARGUS Core] --> B[Aviyonik Birimi]
-    A --> C[İtki Sistemi]
-    A --> D[EH Savunma Modülü]
-    B --> B1[GNSS Resilient IMU]
-    B --> B2[AI Vision Engine]
-    C --> C1[High-Efficiency BLDC]
-    D --> D1[Signal Deception Unit]
+    A[ARGUS Tactical Core] --> B[Avionics Suite]
+    A --> C[Propulsion Module]
+    A --> D[EW Resilience Shield]
+    
+    B --> B1[GNSS-Resilient IMU Cluster]
+    B --> B2[AI Vision Edge Engine]
+    
+    C --> C1[High-Efficiency BLDC Drive]
+    C --> C2[Smart Battery Mgmt System]
+    
+    D --> D1[Signal Deception Unit (SDU)]
+    D --> D2[Hopping Frequency Link]
 ```
 
 ---
 
-## 📂 Dizin Yapısı
+## 📂 Repository Architecture
 
 ```bash
 uav-tech-manual/
-├── docs/               # Teknik Dökümantasyon
+├── docs/               # Technical Specifications & Protocols
 │   ├── hardware_specs.md
 │   ├── flight_ops.md
 │   ├── maintenance.md
 │   ├── tactical_ew.md
 │   └── philosophy.md
-├── assets/             # Şemalar ve Teknik Görseller
-└── README.md           # Ana Kılavuz Girişi
+├── assets/             # Schematics & Technical Visuals
+└── README.md           # The Sovereign Gateway
 ```
 
 ---
 
-## 🚀 Hızlı Başlangıç (Operasyonel Hazırlık)
+## 🚀 Rapid Operational Deployment
 
-1.  **Güç Kontrolü**: Batarya voltajlarını (min 14.8V) kontrol edin.
-2.  **Sistem Kontrolü**: Aviyonik birimlerin (IMU, Baro) kalibrasyonunu doğrulayın.
-3.  **EH Hazırlığı**: OMEGA-tier karıştırma önleme modüllerini aktif edin.
-4.  **Veri Linki**: Yer istasyonu (Mission Control) bağlantısını senkronize edin.
+1.  **Power Check**: Verify cell balance (min 3.7V per cell).
+2.  **IMU Calibration**: Ensure zero-offset on the primary IMU cluster.
+3.  **EW Shielding**: Activate OMEGA-tier deception modules via **ARGUS Mission Control**.
+4.  **Sync**: Link with the Tactical HUD for real-time telemetry verification.
 
 ---
 
