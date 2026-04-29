@@ -14,7 +14,7 @@ def calculate_flight_time(battery_mah, avg_amp_draw, margin_percent=20):
     return flight_time_hours * 60
 
 def main():
-    print("🛸 ARGUS Flight Dynamics Calculator")
+    print("🛸 SUNGUR Flight Dynamics Calculator")
     print("-" * 35)
     
     try:

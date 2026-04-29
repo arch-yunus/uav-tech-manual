@@ -1,9 +1,9 @@
 # ⚔️ Alperen Teknoloji Felsefesi
 
-ARGUS projesi, sadece bir mühendislik çalışması değil; bir **zihniyet dönüşümü** projesidir. Teknolojiyi kuru bir araç olarak değil, bir "House of Being" (Varlık Evi) ve bir hizmet aracı olarak görürüz.
+SUNGUR projesi, sadece bir mühendislik çalışması değil; bir **zihniyet dönüşümü** projesidir. Teknolojiyi kuru bir araç olarak değil, bir "House of Being" (Varlık Evi) ve bir hizmet aracı olarak görürüz.
 
 ## 1. Siber-Asabiyet (Cyber-Asabiyyah)
-Teknik beceriyi toplumsal dayanışma ve ortak ideal ile birleştirme sanatıdır. ARGUS ekosistemi, bireysel dehanın ötesinde, kolektif bir disiplin ve ruhun eseridir.
+Teknik beceriyi toplumsal dayanışma ve ortak ideal ile birleştirme sanatıdır. SUNGUR ekosistemi, bireysel dehanın ötesinde, kolektif bir disiplin ve ruhun eseridir.
 
 ## 2. Gazi-Derviş Disiplini
 - **Gazi**: Sahada en ileri teknolojiyi cesaretle kullanmak.

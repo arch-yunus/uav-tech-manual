@@ -1,6 +1,6 @@
 # 📡 Taktik Elektronik Harp ve Dayanıklı Seyrüsefer
 
-ARGUS sistemleri, GPS-denied (GPS'in engellendiği) ve yüksek radyo paraziti bulunan çatışma sahalarında hayatta kalmak üzere optimize edilmiştir.
+SUNGUR sistemleri, GPS-denied (GPS'in engellendiği) ve yüksek radyo paraziti bulunan çatışma sahalarında hayatta kalmak üzere optimize edilmiştir.
 
 ## 1. Karıştırma Önleme Stratejileri
 

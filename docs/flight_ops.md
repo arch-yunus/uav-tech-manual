@@ -1,6 +1,6 @@
 # ✈️ Uçuş Operasyonları
 
-Uçuş disiplini, operasyonel başarının yarısıdır. ARGUS sistemleri için belirlenen standart operasyon prosedürleri (SOP) aşağıdadır.
+Uçuş disiplini, operasyonel başarının yarısıdır. SUNGUR sistemleri için belirlenen standart operasyon prosedürleri (SOP) aşağıdadır.
 
 ## 1. Uçuş Öncesi Kontroller
 - [ ] **Görsel Muayene**: Pervanelerde çatlak, gövdede gevşek vida kontrolü.

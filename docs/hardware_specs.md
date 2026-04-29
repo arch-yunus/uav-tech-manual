@@ -1,12 +1,12 @@
 # 🛠️ Donanım Spesifikasyonları ve Bileşen Topolojisi
 
-ARGUS platformunun fiziksel katmanı, maksimum dayanıklılık ve minimum ağırlık prensibiyle tasarlanmıştır.
+SUNGUR platformunun fiziksel katmanı, maksimum dayanıklılık ve minimum ağırlık prensibiyle tasarlanmıştır.
 
 ## 1. Sistem Mimarisi (Topoloji)
 
 ```mermaid
 graph TD
-    A[ARGUS Taktik Çekirdek] --> B[Aviyonik Paketi]
+    A[SUNGUR Taktik Çekirdek] --> B[Aviyonik Paketi]
     A --> C[İtki Modülü]
     A --> D[EH Dayanıklılık Kalkanı]
     
@@ -47,7 +47,7 @@ graph TD
 ## 4. Güç Dağıtımı
 
 - **Batarya:** 6S 4500mAh 100C LiPo / Li-Ion Hibrit.
-- **BMS:** Hücre bazlı izleme ve akım şöntü içeren Sovereign Akıllı BMS.
+- **BMS:** Hücre bazlı izleme ve akım şöntü içeren SUNGUR Akıllı BMS.
 
 ---
 **Egemen Mimari | Donanım Standartları**

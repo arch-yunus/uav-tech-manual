@@ -13,7 +13,7 @@ LCHI (Low-Cost High-Impact) yaklaşımı, sistemlerin sürdürülebilirliğini v
 ## 2. Saha Onarım Protokolü
 - **Motor Değişimi**: Modüler konnektörler sayesinde lehimleme gerektirmeden 5 dakika içinde değişim.
 - **ESC Yenileme**: Quick-swap yuvaları üzerinden hızlı montaj.
-- **Yazılım Güncelleme**: ARGUS-Core üzerinden OTA (Over-the-Air) güncelleme imkanı.
+- **Yazılım Güncelleme**: SUNGUR-Core üzerinden OTA (Over-the-Air) güncelleme imkanı.
 
 ## 3. Batarya Yönetimi
 - Bataryalar asla %20 kapasitenin altında bırakılmamalıdır.

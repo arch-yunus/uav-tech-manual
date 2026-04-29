@@ -1,6 +1,6 @@
 # 📋 Görev Profilleri
 
-ARGUS sistemleri, farklı operasyonel ihtiyaçlara göre optimize edilmiş görev profillerine sahiptir.
+SUNGUR sistemleri, farklı operasyonel ihtiyaçlara göre optimize edilmiş görev profillerine sahiptir.
 
 ## 1. Keşif ve Gözetleme (ISR)
 - **Amaç**: Geniş alanların gerçek zamanlı optik/termal gözetimi.
