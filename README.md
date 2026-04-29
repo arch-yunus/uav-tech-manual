@@ -14,7 +14,10 @@
 
 ## 🛰️ Stratejik Vizyon ve LCHI Felsefesi
 
-**ARGUS Platformu**, **Düşük-Maliyet Yüksek-Etki (LCHI)** doktrini altında mühendislik edilmiştir. Modüler dayanıklılığa öncelik veriyoruz; en yoğun Elektronik Harp (EH) ortamlarında bile sistemin operasyonel bütünlüğünü teknik disiplin ve ruhsal odaklanma (*Siber-Asabiyet*) ile korumasını sağlıyoruz.
+**ARGUS Platformu**, **Düşük-Maliyet Yüksek-Etki (LCHI)** doktrini altında mühendislik edilmiştir. Bu felsefe, sadece ekonomik bir tercih değil, asimetrik harp ortamlarında sürdürülebilirlik ve hızlı ölçeklenebilirlik için teknik bir zorunluluktur.
+
+### 🛡️ Siber-Asabiyet (Cyber-Solidarity)
+Sistemin her katmanı, teknik disiplin ve ruhsal odaklanmanın bir birleşimidir. En yoğun Elektronik Harp (EH) ortamlarında dahi sistemin operasyonel bütünlüğünü koruması, bu "dirençli asabiyet" kültürü ile sağlanır.
 
 ### 📜 Operasyonel Ana Modüller
 
@@ -49,6 +52,36 @@ graph TD
 
 ---
 
+## 📐 Kritik Sistem Parametreleri
+
+Maksimum performans için aşağıdaki sınır değerlere uyulması mecburidir:
+
+| Parametre | Nominal Değer | Limit Değer | Birim |
+| :--- | :--- | :--- | :--- |
+| **Maksimum İrtifa** | 500 | 2500 | Metre (AGL) |
+| **Seyir Hızı** | 15 | 28 | m/s |
+| **Operasyonel Menzil** | 5 | 12 | Kilometre |
+| **Rüzgar Dayanımı** | 20 | 35 | km/saat |
+| **Sistem Voltajı** | 22.2 | 25.2 | Volt (6S) |
+
+---
+
+## ⚠️ Güvenlik ve Acil Durum Protokolleri
+
+Hata payı olmayan ortamlarda, saniyeler hayat kurtarır.
+
+### 1. Link Kaybı (Signal Loss)
+- Yer kontrol istasyonu ile bağlantı 3 saniyeden fazla kesilirse, sistem otomatik olarak **Failsafe-RTH** (Eve Dönüş) moduna geçer.
+- RTH irtifası, kalkış noktasından itibaren minimum **100 metre** olarak ayarlanmalıdır.
+
+### 2. Kritik Voltaj Düşümü
+- Hücre başına gerilim **3.4V** altına düştüğünde, sistem en yakın güvenli iniş noktasına (Safe Landing) yönelir.
+
+### 3. GPS Aldatmacası (Spoofing) Tespiti
+- GNSS verileri ile IMU verileri arasında tutarsızlık saptandığında, sistem **Vision-Only** (Sadece Görüntü) navigasyonuna geçer ve operatöre uyarı gönderir.
+
+---
+
 ## 📂 Depo Mimarisi
 
 ```bash
@@ -72,6 +105,12 @@ uav-tech-manual/
 2.  **IMU Kalibrasyonu**: Birincil IMU kümesinde sıfır sapma olduğundan emin olun.
 3.  **EH Kalkanı**: OMEGA-tier aldatma modüllerini **ARGUS Mission Control** üzerinden aktif edin.
 4.  **Senkronizasyon**: Gerçek zamanlı telemetri doğrulaması için Taktik HUD ile bağlantı kurun.
+
+---
+
+## 🤝 Katkıda Bulunma
+
+Bu kılavuz, kolektif zekanın bir ürünüdür. Teknik güncellemeler veya yeni operasyonel prosedürler için `feature/` branch'leri üzerinden PR (Pull Request) gönderebilirsiniz.
 
 ---
 
