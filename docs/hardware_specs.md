@@ -1,26 +1,53 @@
-# 🛠️ Hardware Specifications & Component Topology
+# 🛠️ Donanım Spesifikasyonları ve Bileşen Topolojisi
 
 ARGUS platformunun fiziksel katmanı, maksimum dayanıklılık ve minimum ağırlık prensibiyle tasarlanmıştır.
 
-## 1. Propulsion System (İtki Sistemi)
+## 1. Sistem Mimarisi (Topoloji)
 
-- **Motors:** 4x 2806.5 1300KV High-Efficiency BLDC.
-- **ESCs:** 60A 4-in-1 BLHeli_32 (DSHOT1200 support).
-- **Propellers:** 7-inch Carbon Fiber Reinforced.
+```mermaid
+graph TD
+    A[ARGUS Taktik Çekirdek] --> B[Aviyonik Paketi]
+    A --> C[İtki Modülü]
+    A --> D[EH Dayanıklılık Kalkanı]
+    
+    subgraph "Duyular ve Zekâ (Senses & Brain)"
+    B --> B1[EH-Dayanıklı IMU Kümesi]
+    B --> B2[AI Görü Edge Motoru]
+    B --> B3[Magnetometre & Baro Shield]
+    end
+    
+    subgraph "Güç ve Hareket (Power & Motion)"
+    C --> C1[Yüksek Verimli BLDC Sürücü]
+    C --> C2[Akıllı Batarya Yönetim Sistemi]
+    C --> C3[Aktüatör Yedekleme Sistemi]
+    end
+    
+    subgraph "Kalkan ve Bağlantı (Shield & Link)"
+    D --> D1[Sinyal Aldatma Birimi (SDU)]
+    D --> D2[Frekans Atlamalı Link]
+    D --> D3[Şifreleme Katmanı AES-256]
+    end
+```
 
-## 2. Avionics & Computation (Aviyonik & İşlem Gücü)
+## 2. İtki Sistemi
 
-- **Flight Controller (FC):** STM32H743 (Pixhawk Cube Orange+ equivalent).
-- **Companion Computer (CC):** NVIDIA Orin Nano (8GB) for Edge AI.
-- **Sensors:** 
+- **Motorlar:** 4x 2806.5 1300KV Yüksek Verimli BLDC.
+- **ESC'ler:** 60A 4-in-1 BLHeli_32 (DSHOT1200 desteği).
+- **Pervaneler:** 7 inç Karbon Fiber Takviyeli.
+
+## 3. Aviyonik ve Hesaplama
+
+- **Uçuş Kontrolcüsü (FC):** STM32H743 (Pixhawk Cube Orange+ dengi).
+- **Görev Bilgisayarı (CC):** NVIDIA Orin Nano (8GB) - Uçta YZ için.
+- **Sensörler:** 
     - Bosch BMI088 IMU
-    - Sensirion SDP3x Differential Pressure Sensor (Airspeed)
-    - U-Blox F9P High-Precision GNSS (RTK Ready).
+    - Sensirion SDP3x Diferansiyel Basınç Sensörü (Hava Hızı)
+    - U-Blox F9P Yüksek Hassasiyetli GNSS (RTK Uyumlu).
 
-## 3. Power Distribution (Güç Dağıtımı)
+## 4. Güç Dağıtımı
 
-- **Battery:** 6S 4500mAh 100C LiPo / Li-Ion Hybrid.
-- **BMS:** Sovereign Smart BMS with per-cell monitoring and current shunt.
+- **Batarya:** 6S 4500mAh 100C LiPo / Li-Ion Hibrit.
+- **BMS:** Hücre bazlı izleme ve akım şöntü içeren Sovereign Akıllı BMS.
 
 ---
-**Sovereign Architecture | Hardware Standards**
+**Egemen Mimari | Donanım Standartları**
