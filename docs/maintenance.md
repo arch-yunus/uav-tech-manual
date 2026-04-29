@@ -1,4 +1,4 @@
-# 🔧 Bakım ve Lojistik (Maintenance & Logistics)
+# 🔧 Bakım ve Lojistik
 
 LCHI (Low-Cost High-Impact) yaklaşımı, sistemlerin sürdürülebilirliğini ve sahada hızlı onarılabilirliğini gerektirir.
 

@@ -1,4 +1,4 @@
-# ⚔️ Alperen Teknoloji Felsefesi (The Philosophy)
+# ⚔️ Alperen Teknoloji Felsefesi
 
 ARGUS projesi, sadece bir mühendislik çalışması değil; bir **zihniyet dönüşümü** projesidir. Teknolojiyi kuru bir araç olarak değil, bir "House of Being" (Varlık Evi) ve bir hizmet aracı olarak görürüz.
 

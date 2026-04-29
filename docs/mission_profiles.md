@@ -1,4 +1,4 @@
-# 📋 Görev Profilleri (Mission Profiles)
+# 📋 Görev Profilleri
 
 ARGUS sistemleri, farklı operasyonel ihtiyaçlara göre optimize edilmiş görev profillerine sahiptir.
 

@@ -1,20 +1,25 @@
-# 📡 Taktik Elektronik Harp (Tactical EW)
+# 📡 Taktik Elektronik Harp ve Dayanıklı Seyrüsefer
 
-ARGUS sistemleri, yoğun elektronik harp (EH) ortamlarında dahi operasyonel kalabilmek için **Aegis-AI OMEGA** mimarisini kullanır.
+ARGUS sistemleri, GPS-denied (GPS'in engellendiği) ve yüksek radyo paraziti bulunan çatışma sahalarında hayatta kalmak üzere optimize edilmiştir.
 
-## 1. GNSS-Denied Navigasyon
-- **Visual Odometry**: Kamera verileri kullanılarak GPS bağımsız konum doğrulama.
-- **Inertial Drift Compensation**: Yüksek hassasiyetli IMU verilerinin AI tabanlı filtrelenmesi.
-- **Jamming Detection**: GNSS sinyalindeki yapay bozulmaları (spoofing) anlık tespit etme.
+## 1. Karıştırma Önleme Stratejileri
 
-## 2. Haberleşme Güvenliği
-- **Frequency Hopping (FHSS)**: Karıştırılamayan frekans atlamalı iletişim.
-- **LPI/LPD**: Düşük tespit edilme olasılıklı (Low Probability of Intercept) sinyal profili.
-- **Encryption**: Tüm veri akışı AES-256 donanımsal şifreleme ile korunur.
+### A. Frekans Atlama
+- **Protokol:** OMEGA-Link v2.0
+- **Hız:** 1000 hop/s
+- **Spektrum:** 2.4GHz - 5.8GHz dinamik geçiş.
 
-## 3. DRFM ve Aldatıcı Önlemler
-- **Sinyal Klonlama**: Düşman radarlarını yanıltmak için sahte eko oluşturma.
-- **Spectrum Camouflage**: Ortam gürültüsü içinde gizlenmiş veri paketleri.
+### B. GNSS Yanıltma Tespiti (Anti-Spoofing)
+- **Algoritma:** EKF-based IMU/GNSS Consistency Check.
+- **Müdahale:** Sapma 5 metreyi aşarsa GNSS verisi reddedilir ve VIO (Visual Inertial Odometry) moduna geçilir.
+
+## 2. Siber-Asabiyet (Signal Resilience)
+
+| Tehdit | Karşı Tedbir | Etki Seviyesi |
+| :--- | :--- | :--- |
+| Wideband Noise | Adaptive Filtering | 🟢 High |
+| GPS Spoofing | V-SLAM & IMU Fusion | 🟢 High |
+| C2 Link Jamming | Autonomous RTH (LCHI Protocol) | 🟢 Medium |
 
 ---
-*Görünmez olan, yenilmezdir.*
+**Sovereign Architecture | EW Standards**

@@ -1,29 +1,26 @@
-# 🛠️ Donanım Spesifikasyonları (Hardware Specs)
+# 🛠️ Hardware Specifications & Component Topology
 
-ARGUS İHA sistemleri, dayanıklılık ve modülerlik üzerine inşa edilmiştir. Donanım seçimleri, yüksek elektromanyetik parazit içeren ortamlarda bile çalışabilecek şekilde optimize edilmiştir.
+ARGUS platformunun fiziksel katmanı, maksimum dayanıklılık ve minimum ağırlık prensibiyle tasarlanmıştır.
 
-## 1. Gövde (Airframe)
-- **Malzeme**: Karbon Fiber Takviyeli Polimer (CFRP) ve 7075 Alüminyum Alaşım.
-- **Konfigürasyon**: X8 (Okto-Quad) - Motor arızası durumunda yedeklilik sağlar.
-- **Ağırlık (Boş)**: 2.4 kg
-- **MTOW (Maksimum Kalkış Ağırlığı)**: 7.5 kg
+## 1. Propulsion System (İtki Sistemi)
 
-## 2. İtki Sistemi (Propulsion)
-- **Motorlar**: T-Motor U5 v2.0 (Yüksek verimli BLDC).
-- **ESC**: 60A Flame Pro (Hızlı tepki ve termal koruma).
-- **Pervaneler**: 15x5.2 Karbon Fiber (Düşük gürültü profili).
-- **Batarya**: 6S 22.2V 16000mAh LiPo (High Discharge).
+- **Motors:** 4x 2806.5 1300KV High-Efficiency BLDC.
+- **ESCs:** 60A 4-in-1 BLHeli_32 (DSHOT1200 support).
+- **Propellers:** 7-inch Carbon Fiber Reinforced.
 
-## 3. Aviyonik ve Kontrol (Avionics)
-- **Uçuş Kontrolcüsü**: ARGUS-Core (H743 tabanlı, çift işlemci).
-- **IMU**: Üçlü yedekli (Triple Redundant) titreşim izolasyonlu sensörler.
-- **GNSS**: Ublox F9P (RTK destekli, multi-band).
-- **Telemetri**: 868MHz / 2.4GHz AES-256 şifreli LoRa linki.
+## 2. Avionics & Computation (Aviyonik & İşlem Gücü)
 
-## 4. Sensör ve Payload
-- **EO/IR Kamera**: 4K Optik / 640x512 Termal (Gimbal stabilize).
-- **Lidar**: 120m menzilli engel sakınma sensörü.
-- **AI İşlemci**: NVIDIA Jetson Orin Nano (Görüntü işleme ve EH kararı için).
+- **Flight Controller (FC):** STM32H743 (Pixhawk Cube Orange+ equivalent).
+- **Companion Computer (CC):** NVIDIA Orin Nano (8GB) for Edge AI.
+- **Sensors:** 
+    - Bosch BMI088 IMU
+    - Sensirion SDP3x Differential Pressure Sensor (Airspeed)
+    - U-Blox F9P High-Precision GNSS (RTK Ready).
+
+## 3. Power Distribution (Güç Dağıtımı)
+
+- **Battery:** 6S 4500mAh 100C LiPo / Li-Ion Hybrid.
+- **BMS:** Sovereign Smart BMS with per-cell monitoring and current shunt.
 
 ---
-*Göklerin muhafızı, sağlam temeller üzerine kurulur.*
+**Sovereign Architecture | Hardware Standards**
